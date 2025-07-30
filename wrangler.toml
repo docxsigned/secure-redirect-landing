@@ -11,5 +11,5 @@ name = "secure-redirect-landing-staging"
 # KV Namespaces for enhanced rate limiting and analytics
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
-id = "your-rate-limit-kv-id"
-preview_id = "your-preview-rate-limit-kv-id" 
+id = "ba383042bdf947ada2c551898fcbb3f8"
+preview_id = "ba383042bdf947ada2c551898fcbb3f8" 
