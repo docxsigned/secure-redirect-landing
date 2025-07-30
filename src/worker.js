@@ -10,7 +10,6 @@ export default {
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         status: 200,
-        status: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
@@ -227,7 +226,7 @@ async function handleValidation(request, env) {
 async function verifyTurnstile(token, clientIP) {
   try {
     const formData = new FormData();
-    formData.append('secret', 'YOUR_TURNSTILE_SECRET_KEY'); // Replace with your secret key
+    formData.append('secret', '0x4AAAAAABnQ-ZkgVUTW6mMjwTCvZZm5bks'); // Replace with your secret key
     formData.append('response', token);
     formData.append('remoteip', clientIP);
 
@@ -458,7 +457,7 @@ async function getChallengeDifficulty(clientIP, env) {
 async function verifyTurnstileEnhanced(token, clientIP, difficulty) {
   try {
     const formData = new FormData();
-    formData.append('secret', 'YOUR_TURNSTILE_SECRET_KEY');
+    formData.append('secret', '0x4AAAAAABnQ-ZkgVUTW6mMjwTCvZZm5bks');
     formData.append('response', token);
     formData.append('remoteip', clientIP);
 
@@ -674,7 +673,7 @@ async function serveStaticFile(filename) {
                     >
                     
                     <div class="turnstile-container">
-                        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABnQ-VuD2fMX2QDA"></div>
                     </div>
                 </div>
                 
@@ -1294,7 +1293,7 @@ class SecureRedirectApp {
         const checkTurnstile = () => {
             if (window.turnstile) {
                 this.turnstileWidget = window.turnstile.render('.cf-turnstile', {
-                    sitekey: 'YOUR_TURNSTILE_SITE_KEY', // Replace with your site key
+                    sitekey: '0x4AAAAAABnQ-VuD2fMX2QDA', // Replace with your site key
                     callback: (token) => {
                         this.onTurnstileSuccess(token);
                     },
