@@ -1,0 +1,25 @@
+{
+  "name": "secure-redirect-landing",
+  "version": "1.0.0",
+  "description": "A secure redirect landing page with Cloudflare Workers and Turnstile protection",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "echo 'No build step required'",
+    "test": "echo 'No tests specified'",
+    "setup": "node setup.js"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "turnstile",
+    "landing-page",
+    "redirect"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {}
+} 
